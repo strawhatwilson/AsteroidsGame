@@ -1,4 +1,4 @@
-class Stars 
+class Star 
 {
 	  private int myX, myY;
 	  public Star()
@@ -8,7 +8,7 @@ class Stars
 	  }
 	  public  void show () 
 	  {
-	  	fill(255);
-	  	ellipse(myX,myY,3,3);
+	  	fill((int)(Math.random()*255),(int)(Math.random()*255),(int)(Math.random()*255));
+	  	ellipse(myX,myY,5,5);
 	  }
 }
