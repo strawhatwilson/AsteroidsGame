@@ -1,5 +1,6 @@
 Spaceship elon = new Spaceship ();
 Star [] nightSky = new Star [200];
+Asteroid [] rockFly = new Asteroid [5];
 public void setup() 
 {
   size (500,500);
@@ -7,13 +8,22 @@ public void setup()
   {
   	nightSky[i] = new Star();
   }
+  for (int k = 0; k < rockFly.length; k++)
+  {
+  	rockFly[k] = new Asteroid();
+  }
 }
 public void draw() 
-{
+{						
  background(0);
  for (int i = 0; i < nightSky.length; i++)
  {
  	nightSky[i].show();
+ }
+ for (int k = 0; k < rockFly.length; k++)
+ {
+ 	rockFly[k].show();
+ 	rockFly[k].move();
  }	
  elon.show();
  elon.move();
