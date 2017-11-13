@@ -1,6 +1,6 @@
 Spaceship elon = new Spaceship ();
 Star [] nightSky = new Star [200];
-Asteroid [] rockFly = new Asteroid [5];
+Asteroid [] rockFly = new Asteroid [10];
 public void setup() 
 {
   size (500,500);

@@ -8,6 +8,7 @@ class Star
 	  }
 	  public  void show () 
 	  {
+	  	stroke (0);
 	  	fill((int)(Math.random()*255),(int)(Math.random()*255),(int)(Math.random()*255));
 	  	ellipse(myX,myY,5,5);
 	  }
