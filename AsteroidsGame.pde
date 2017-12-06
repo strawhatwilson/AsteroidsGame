@@ -1,6 +1,6 @@
 Spaceship elon = new Spaceship ();
 Star [] nightSky = new Star [200];
-Asteroid [] rockFly = new Asteroid [10];
+ArrayList <Asteroid> rocks = new ArrayList <Asteroid>();
 public void setup() 
 {
   size (500,500);
@@ -8,11 +8,11 @@ public void setup()
   {
   	nightSky[i] = new Star();
   }
-  for (int k = 0; k < rockFly.length; k++)
+  for (int j = 0; j < 15; j++)
   {
-  	rockFly[k] = new Asteroid();
-  }
-}
+  	rocks.add(j, new Asteroid());
+  }              
+}          
 public void draw() 
 {						
  background(0);
@@ -20,10 +20,14 @@ public void draw()
  {
  	nightSky[i].show();
  }
- for (int k = 0; k < rockFly.length; k++)
+ for (int j = 0;  j < rocks.size(); j++)
  {
- 	rockFly[k].show();
- 	rockFly[k].move();
+ 	rocks.get(j).show();
+ 	rocks.get(j).move();
+
+ 	double d = dist(elon.getX(),elon.getY(),rocks.get(j).getX(),rocks.get(j).getY());
+  		if (d < 10)
+  			rocks.remove(j);
  }	
  elon.show();
  elon.move();
@@ -44,11 +48,11 @@ public void keyTyped()
 	}
 	if(key == 'a')
 	{
-		elon.turn(-10);
+		elon.turn(-100);
 	}
 	if(key == 'd')
 	{
-		elon.turn(10);
+		elon.turn(100);
 	}
 	if(key == 's')
 	{
